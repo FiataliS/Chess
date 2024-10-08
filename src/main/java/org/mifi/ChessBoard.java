@@ -52,4 +52,11 @@ public class ChessBoard {
     public boolean checkPos(int pos) {
         return pos >= 0 && pos <= 7;
     }
+
+    public boolean castling7(){
+        return true;
+    }
+    public boolean castling0(){
+        return true;
+    }
 }

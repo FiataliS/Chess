@@ -1,6 +1,6 @@
 package org.mifi;
 
-public class Horse extends  ChessPiece{
+public class Horse extends ChessPiece {
     public Horse(String color) {
         super(color);
     }
@@ -12,6 +12,10 @@ public class Horse extends  ChessPiece{
 
     @Override
     public boolean canMoveToPosition(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
+        if (chessBoard.board[toLine][toColumn] != null) return false;
+
+
+
         return false;
     }
 
