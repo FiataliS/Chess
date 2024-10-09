@@ -7,15 +7,14 @@ public class Horse extends ChessPiece {
 
     @Override
     public String getColor() {
-        return "";
+        return color;
     }
 
     @Override
     public boolean canMoveToPosition(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
-        if (chessBoard.board[toLine][toColumn] != null) return false;
-
-
-
+        if (chessBoard.board[toLine][toColumn] != null) return false; // если место занято
+        if (Math.abs(line - toLine) == 2 && Math.abs(column - toColumn) == 1) return true; //ход вертикаль
+        if (Math.abs(line - toLine) == 1 && Math.abs(column - toColumn) == 2) return true; //ход горизонталь
         return false;
     }
 

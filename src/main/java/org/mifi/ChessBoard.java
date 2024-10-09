@@ -13,6 +13,7 @@ public class ChessBoard {
     }
 
     public boolean moveToPosition(int startLine, int startColumn, int endLine, int endColumn) {
+        System.out.println(board[startLine][startColumn].getSymbol() + " -> " + board[endLine][endColumn]);
         if (checkPos(startLine) && checkPos(startColumn)) {
 
             if (!nowPlayer.equals(board[startLine][startColumn].getColor())) return false;
@@ -53,10 +54,11 @@ public class ChessBoard {
         return pos >= 0 && pos <= 7;
     }
 
-    public boolean castling7(){
+    public boolean castling7() {
         return true;
     }
-    public boolean castling0(){
+
+    public boolean castling0() {
         return true;
     }
 }

@@ -7,7 +7,7 @@ public class King extends ChessPiece{
 
     @Override
     public String getColor() {
-        return "";
+        return color;
     }
 
     @Override

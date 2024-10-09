@@ -7,7 +7,7 @@ public class Rook extends ChessPiece{
 
     @Override
     public String getColor() {
-        return "";
+        return color;
     }
 
     @Override

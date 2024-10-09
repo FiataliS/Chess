@@ -46,7 +46,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-
         ChessBoard board = buildBoard();
         Scanner scanner = new Scanner(System.in);
         System.out.println("""
