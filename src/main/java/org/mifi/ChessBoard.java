@@ -13,7 +13,6 @@ public class ChessBoard {
     }
 
     public boolean moveToPosition(int startLine, int startColumn, int endLine, int endColumn) {
-        System.out.println(board[startLine][startColumn].getSymbol() + " -> " + board[endLine][endColumn]);
         if (checkPos(startLine) && checkPos(startColumn)) {
 
             if (!nowPlayer.equals(board[startLine][startColumn].getColor())) return false;
@@ -22,7 +21,6 @@ public class ChessBoard {
                 board[endLine][endColumn] = board[startLine][startColumn]; // if piece can move, we moved a piece
                 board[startLine][startColumn] = null; // set null to previous cell
                 this.nowPlayer = this.nowPlayerColor().equals("White") ? "Black" : "White";
-
                 return true;
             } else return false;
         } else return false;

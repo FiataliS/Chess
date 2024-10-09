@@ -14,7 +14,9 @@ public class Pawn extends ChessPiece {
     public boolean canMoveToPosition(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
         boolean firstMove = false;
         ChessPiece chessPiece = chessBoard.board[line][column];
-        if(chessBoard.board[toLine][ toColumn].getSymbol().equals("K")) return false; // короля пешка взять не может
+        if (chessBoard.board[toLine][toColumn] != null) {
+            if(chessBoard.board[toLine][ toColumn].getSymbol().equals("K")) return false; // короля пешка взять не может
+        }
         if (chessPiece.color.equals("White") && line == 1 || chessPiece.color.equals("Black") && line == 6) {
             firstMove = true;
         } else {
