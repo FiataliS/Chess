@@ -18,9 +18,7 @@ public class Bishop extends ChessPiece {
                 int markingLine = line > toLine ? line - i : line + i;
                 int markingColumn = column > toColumn ? column - i : column + i;
                 if (chessBoard.board[markingLine][markingColumn] != null) { // если на пути до точки есть фигура, то ход не возможен
-
                     return false;
-
                 }
             }
             if (chessBoard.board[toLine][toColumn] != null) {
