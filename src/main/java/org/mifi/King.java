@@ -27,6 +27,7 @@ public class King extends ChessPiece {
     }
 
     public boolean isUnderAttack(ChessBoard board, int line, int column) {
+        board.board[line][column] = new King(color);
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 if (board.board[i][j] != null) {
@@ -34,18 +35,20 @@ public class King extends ChessPiece {
                         continue;
                     if (board.board[i][j].getSymbol().equals(this.getSymbol()) && !board.board[i][j].getColor().equals(this.color)) {
                         if (((King) board.board[i][j]).attackKing(board, i, j, line, column)) { //Пришлось добавить приведение типов в связи с выводом метода атаки короля.. иначе происходит рекурсия и ошибка переполнения стека.
-                            System.out.println(board.board[i][j].getSymbol() + board.board[i][j].getColor() + " " + this.getSymbol() + this.color);
+                            board.board[line][column] = null;
                             return true;
                         }
                         continue;
                     }
                     if (!board.board[i][j].color.equals(this.color) && board.board[i][j].canMoveToPosition(board, i, j, line, column)) {
                         System.out.println(board.board[i][j].getSymbol() + board.board[i][j].getColor());
+                        board.board[line][column] = null;
                         return true;
                     }
                 }
             }
         }
+        board.board[line][column] = null;
         return false;
     }
 }
