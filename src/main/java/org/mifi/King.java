@@ -12,7 +12,6 @@ public class King extends ChessPiece {
 
     @Override
     public boolean canMoveToPosition(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
-        if (isUnderAttack(chessBoard, toLine, toColumn)) System.out.println("Король под атакой");
         return attackKing(chessBoard, line, column, toLine, toColumn);
     }
 
