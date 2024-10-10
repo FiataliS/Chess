@@ -1,7 +1,5 @@
 package org.mifi;
 
-import com.sun.source.tree.BreakTree;
-
 public class King extends ChessPiece {
     public King(String color) {
         super(color);
@@ -36,7 +34,7 @@ public class King extends ChessPiece {
                     if (board.board[i][j].getSymbol().equals(this.getSymbol()) && board.board[i][j].getColor().equals(this.color))
                         continue;
                     if (board.board[i][j].getSymbol().equals(this.getSymbol()) && !board.board[i][j].getColor().equals(this.color)) {
-                        if (((King) board.board[i][j]).attackKing(board, i, j, line, column)) {
+                        if (((King) board.board[i][j]).attackKing(board, i, j, line, column)) { //Пришлось добавить приведение типов в связи с выводом метода атаки короля.. иначе происходит рекурсия и ошибка переполнения стека.
                             System.out.println(board.board[i][j].getSymbol() + board.board[i][j].getColor() + " " + this.getSymbol() + this.color);
                             return true;
                         }

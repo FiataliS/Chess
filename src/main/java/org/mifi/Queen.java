@@ -1,6 +1,6 @@
 package org.mifi;
 
-public class Queen extends ChessPiece{
+public class Queen extends ChessPiece {
     public Queen(String color) {
         super(color);
     }
@@ -58,13 +58,11 @@ public class Queen extends ChessPiece{
                     }
                 }
             }
-
             if (chessBoard.board[toLine][toColumn] != null) {
                 if (!chessBoard.board[toLine][toColumn].getColor().equals(color)) return true;
             } else {
                 return true;
             }
-
         }
         return false;
     }

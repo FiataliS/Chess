@@ -56,8 +56,6 @@ public class Pawn extends ChessPiece {
                 }
             }
         }
-
-
         return false;
     }
 
@@ -65,5 +63,4 @@ public class Pawn extends ChessPiece {
     public String getSymbol() {
         return "P";
     }
-
 }

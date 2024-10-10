@@ -33,6 +33,4 @@ public class Bishop extends ChessPiece {
     public String getSymbol() {
         return "B";
     }
-
-
 }
