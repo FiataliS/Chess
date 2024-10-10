@@ -34,7 +34,7 @@ public class Main {
         board.board[7][5] = new Bishop("Black");
         board.board[7][6] = new Horse("Black");
         board.board[7][7] = new Rook("Black");
-       // board.board[6][0] = new Pawn("Black");
+        board.board[6][0] = new Pawn("Black");
         board.board[6][1] = new Pawn("Black");
         board.board[6][2] = new Pawn("Black");
         board.board[6][3] = new Pawn("Black");
